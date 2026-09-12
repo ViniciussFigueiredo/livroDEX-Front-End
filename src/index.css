@@ -1,0 +1,48 @@
+:root {
+  --white: #FFFF;
+  --white-2: #F8FAFC
+  --grey-1: #64748B;
+  --grey-2: #0F172A;
+  --blue-1: #E2E8F0;
+  --blue-2: #0284C7;
+}
+
+:focus {
+  outline: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: auto;
+  scrollbar-color: #E2E8F0 #0284C7;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--grey-800);
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-margin-top: 80px;
+}
+
+h1 {
+  font-size: 3.25rem;
+  font-weight: 800;
+}
+
+p {
+  font-size: 1.25rem;
+  color: var(--white);
+  opacity: 50%;
+}
