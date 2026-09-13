@@ -3,3 +3,33 @@
     height: 60px;
     background-color: var(--white-2);
 }
+
+.navbar .search input {
+    width: 370px;
+    height: 34px;
+    border-radius: 25px;
+    border: 1px solid #CBD5E1;
+}
+
+
+.navbar .search input::placeholder {
+  color: #94A3B8;
+  font-size: 13px;
+  font-family: 'Inter';
+}
+
+.navbar .search input:focus {
+  outline: none;
+  box-shadow: none; 
+  border-color: var(--blue-2);
+}
+
+@media (max-width: 992px) {
+    .navbar .search input {
+    width: 200px;
+    height: 34px;
+    border-radius: 25px;
+    border: 1px solid #CBD5E1;
+}
+    
+}
