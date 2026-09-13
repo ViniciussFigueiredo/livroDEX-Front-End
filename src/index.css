@@ -1,6 +1,6 @@
 :root {
   --white: #FFFF;
-  --white-2: #F8FAFC
+  --white-2:#F8FAFC;
   --grey-1: #64748B;
   --grey-2: #0F172A;
   --blue-1: #E2E8F0;
@@ -40,6 +40,13 @@ h1 {
   font-family: 'Inter';
   font-size: 2.1rem;
   color: var(--grey-2) ;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Inter';
+  font-size: 1.25rem;
+  color: var(--blue-2) ;
   font-weight: 700;
 }
 
