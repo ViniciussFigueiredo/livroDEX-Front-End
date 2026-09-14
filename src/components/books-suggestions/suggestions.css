@@ -1,6 +1,6 @@
 .card-book {
     width: 200px;
-    height: 290px;
+    height: 300;
     background-color: var(--white-2);
     border-radius: 10px;
 }

@@ -1,7 +1,9 @@
 import { Suggestions } from '../../components/books-suggestions/suggestions'
 import './main.css'
 
+
 export function Main() {
+
     return (
         <section className='main'>
             <div className='header w-100 d-flex align-items-center px-5'>
@@ -15,16 +17,12 @@ export function Main() {
                         <input className="form-control me-2" type="search" placeholder="Buscar livro ou autor..." aria-label="Search" />
                         <button type="button" className="btn">Pesquisar</button>
                     </div>
-                </div>                
+                </div>
             </div>
             <div className='suggestions px-5 mt-5'>
                 <h2>Livros Populares & Destaques</h2>
                 <p>Sugestões em alta para você começar a navegar</p>
-                <div className='d-flex w-100 justify-content-between mt-5'>
-                    <Suggestions />
-                    <Suggestions />
-                    <Suggestions />
-                    <Suggestions />
+                <div className=''>
                     <Suggestions />
                 </div>
             </div>
