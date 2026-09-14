@@ -5,6 +5,7 @@ interface Livro {
     titulo: string;
     nomeAutor: string;
     capa: string;
+    avaliacao?: number;
 }
 
 export function Suggestions() {
@@ -58,10 +59,10 @@ export function Suggestions() {
                             src={livro.capa || 'https://via.placeholder.com/150x220?text=Sem+Capa'}
                             alt={`Capa de ${livro.titulo}`}
                         />
-                        <h1>{livro.titulo}</h1>
+                        <h1 className='mt-3'>{livro.titulo}</h1>
                         <p>{livro.nomeAutor}</p>
                         <div className='rating'>
-                            <p>★4.9</p>
+                            <p>★ {livro.avaliacao ? livro.avaliacao.toFixed(1) : 'N/A'}</p>
                         </div>
                     </div>
                 ))}

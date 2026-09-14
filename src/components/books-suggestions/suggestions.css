@@ -1,6 +1,6 @@
 .card-book {
     width: 200px;
-    height: 300;
+    height: 250;
     background-color: var(--white-2);
     border-radius: 10px;
 }
@@ -15,10 +15,11 @@
 }
 
 .card-book p{
-   font-size: 14px;
+   font-size: 11px;
 }
 
 .card-book .rating p{
    color: #D97706;
+   font-size: 14px;
    font-weight: bold;
 }
