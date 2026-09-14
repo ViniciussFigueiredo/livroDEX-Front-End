@@ -1,0 +1,24 @@
+.card-book {
+    width: 200px;
+    height: 290px;
+    background-color: var(--white-2);
+    border-radius: 10px;
+}
+
+.card-book img{
+   width: 100%;
+   height: 180px;
+}
+
+.card-book h1{
+   font-size: 16px;
+}
+
+.card-book p{
+   font-size: 14px;
+}
+
+.card-book .rating p{
+   color: #D97706;
+   font-weight: bold;
+}

@@ -1,10 +1,12 @@
-import { Navbar } from "./views/navbar/navbar"
+import { Main } from "./views/main-page/main"
 
 function App() {
 
   return (
-    <Navbar/>
-    
+    <div>
+      <Main />
+    </div>
+
   )
 }
 
