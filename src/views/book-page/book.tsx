@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Infos } from '../../components/infos/infos'
 import { Navbar } from '../navbar/navbar'
 import './book.css'
+import { useParams } from 'react-router-dom';
 
 interface LivroDetalhes {
     titulo: string;
@@ -25,16 +26,19 @@ export function Book() {
     const [livro, setLivro] = useState<LivroDetalhes | null>(null);
     const [autor, setAutor] = useState<AutorDetalhes | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
+    const {titulo} = useParams <{ titulo: string}> ();
+    
 
-    const nomeLivroTeste = 'Dom Casmurro';
 
     useEffect(() => {
         async function carregarDados() {
+            if (!titulo) return;
+
             try {
                 setLoading(true);
 
                 const resLivro = await fetch(
-                    `http://localhost:8080/api/livros?nome=${encodeURIComponent(nomeLivroTeste)}`
+                    `http://localhost:8080/api/livros?nome=${encodeURIComponent(titulo)}`
                 );
                 if (!resLivro.ok) throw new Error('Erro ao buscar livro');
                 const dadosLivro: LivroDetalhes = await resLivro.json();
@@ -57,7 +61,7 @@ export function Book() {
         }
 
         carregarDados();
-    }, []);
+    }, [titulo]);
 
     if (loading) {
         return <div className="p-5 text-center">Carregando informações...</div>;

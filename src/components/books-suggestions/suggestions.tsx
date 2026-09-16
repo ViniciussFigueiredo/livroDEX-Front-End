@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './suggestions.css'
 
 interface Livro {
@@ -11,6 +12,7 @@ interface Livro {
 export function Suggestions() {
     const [livros, setlivros] = useState<Livro[]>([])
     const [loading, setLoading] = useState<boolean>(true)
+    const navigate = useNavigate();
 
     const livrosSugestao = [
         'Dom Casmurro',
@@ -51,9 +53,9 @@ export function Suggestions() {
 
     return (
         <section className="suggestions-container d-flex w-100 justify-content-between mt-5">
-           
-                {livros.map((livro, index) => (
-                    <div key={index} className='card-book p-4'>
+
+            {livros.map((livro, index) => (
+                    <div key={index} onClick={() => navigate(`/livros/${encodeURIComponent(livro.titulo)}`)} className='card-book p-4'>
                         <img
                             className='rounded mx-auto d-block'
                             src={livro.capa || 'https://via.placeholder.com/150x220?text=Sem+Capa'}
@@ -65,8 +67,10 @@ export function Suggestions() {
                             <p>★ {livro.avaliacao ? livro.avaliacao.toFixed(1) : 'N/A'}</p>
                         </div>
                     </div>
-                ))}
-            
+            ))}
+
+
+
 
         </section>
     )
