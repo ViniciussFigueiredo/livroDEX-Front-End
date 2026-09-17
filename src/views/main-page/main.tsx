@@ -1,8 +1,19 @@
+import { useNavigate } from 'react-router-dom';
 import { Suggestions } from '../../components/books-suggestions/suggestions'
 import './main.css'
+import { useState } from 'react';
 
 
 export function Main() {
+
+    const [termoBusca, setTermoBusca] = useState('');
+    const navigate = useNavigate();
+
+    function buscarLivro () {
+        if (termoBusca.trim()) {
+            navigate(`/livros/${encodeURIComponent(termoBusca.trim())}`)
+        }
+    }
 
     return (
         <section className='main'>
@@ -14,8 +25,8 @@ export function Main() {
                 <p className='d-flex justify-content-center mt-md-3'>Explore sinopses, avaliações, biografias de autores e descubra suas próximas leituras em um só lugar.</p>
                 <div className='d-flex justify-content-center w-100 mt-md-5'>
                     <div className='search-main d-flex p-2'>
-                        <input className="form-control me-2" type="search" placeholder="Buscar livro ou autor..." aria-label="Search" />
-                        <button type="button" className="btn">Pesquisar</button>
+                        <input className="form-control me-2" type="search" value={termoBusca} onChange={(e) => setTermoBusca(e.target.value)} placeholder="Buscar livro ou autor..." aria-label="Search" />
+                        <button type="button" onClick={buscarLivro} className="btn">Pesquisar</button>
                     </div>
                 </div>
             </div>

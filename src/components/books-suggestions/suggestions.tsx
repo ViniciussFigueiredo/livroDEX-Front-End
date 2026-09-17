@@ -55,7 +55,7 @@ export function Suggestions() {
         <section className="suggestions-container d-flex w-100 justify-content-between mt-5">
 
             {livros.map((livro, index) => (
-                    <div key={index} onClick={() => navigate(`/livros/${encodeURIComponent(livro.titulo)}`)} className='card-book p-4'>
+                    <div key={index} onClick={() => navigate(`/livros/${encodeURIComponent(livro.titulo)}`)} style={{ cursor: 'pointer' }} className='card-book p-4'>
                         <img
                             className='rounded mx-auto d-block'
                             src={livro.capa || 'https://via.placeholder.com/150x220?text=Sem+Capa'}

@@ -5,7 +5,6 @@ import { Main } from "./views/main-page/main"
 function App() {
 
   return (
-
     <BrowserRouter >
       <Routes>
         <Route path="/" element={<Main />}/> 
