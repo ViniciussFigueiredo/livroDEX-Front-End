@@ -30,44 +30,12 @@
     color: var(--grey-1);
 }
 
-.autor-main .autor-book {
+.autor-main .autor-books {
     width: 1020px;
     height: 310px;
 }
 
-.book-main .autor-details h2{
-    color: var(--grey-2);
-    font-size: 18px;
+.autor-main .autor-books h2{
+   color: var(--grey-2);
 }
 
-.book-main .autor-details .autor-infos {
-    width: 1020px;
-    height: 290px;
-    border-radius: 15px;
-    background-color: var(--white-2);
-    border: 1px solid var(--blue-1);
-}
-
-.book-main .autor-details .autor-infos h1{
-    font-size: 28px;
-}
-
-.book-main .autor-details .autor-infos p{
-    font-size: 14px;
-    font-weight:bold;
-    color: var(--grey-2);
-}
-
-.book-main .autor-details .autor-infos .bio{
-    width:100%;
-    height: 120px;
-    background-color: var(--white);
-    border-radius: 10px;
-    border: 1px solid var(--blue-1)
-}
-
-.book-main .autor-details .autor-infos .bio p{
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--grey-1);
-}

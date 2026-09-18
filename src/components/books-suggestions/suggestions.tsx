@@ -1,55 +1,19 @@
-import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './suggestions.css'
 
-interface Livro {
+export interface Livro {
     titulo: string;
     nomeAutor: string;
     capa: string;
     avaliacao?: number;
 }
 
-export function Suggestions() {
-    const [livros, setlivros] = useState<Livro[]>([])
-    const [loading, setLoading] = useState<boolean>(true)
+interface SuggestionsProps {
+  livros: Livro[];
+}
+
+export function Suggestions({ livros }: SuggestionsProps) {
     const navigate = useNavigate();
-
-    const livrosSugestao = [
-        'Dom Casmurro',
-        'O Hobbit',
-        '1984',
-        'O Alquimista',
-        'A Pediatra'
-    ]
-
-    useEffect(() => {
-        async function carregarSugestoes() {
-            try {
-                setLoading(true);
-
-                const requisicoes = livrosSugestao.map((nome) =>
-                    fetch(`http://localhost:8080/api/livros?nome=${encodeURIComponent(nome)}`)
-                        .then((res) => {
-                            if (!res.ok) throw new Error("Erro na resposta da API")
-                            return res.json()
-                        })
-                )
-
-                const resultados = await Promise.all(requisicoes)
-                setlivros(resultados)
-            } catch (erro) {
-                console.error('Erro em buscar sugestoes', erro)
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        carregarSugestoes()
-    }, [])
-
-    if (loading) {
-        return <div className="loading-container">Carregando sugestões...</div>;
-    }
 
     return (
         <section className="suggestions-container d-flex w-100 justify-content-between mt-5">

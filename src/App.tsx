@@ -8,9 +8,9 @@ function App() {
   return (
     <BrowserRouter >
       <Routes>
-        <Route path="/dasdasd" element={<Main />}/> 
+        <Route path="/" element={<Main />}/> 
         <Route path="/livros/:titulo" element={<Book />}/>
-        <Route path="/" element={<Autor />}/>
+        <Route path="/autor/detalhes/:nomeAutor" element={<Autor />}/>
       </Routes>
     </BrowserRouter>
     
